@@ -10,40 +10,111 @@
     <div id="container">
         <nav id="navbar">
             <h1>using fabriq</h1>
-            <a href="#" class="nav-link">section 1</a>
-            <a href="#" class="nav-link">section 2</a>
-            <a href="#" class="nav-link">section 3</a>
-            <a href="#" class="nav-link">section 4</a>
-            <a href="#" class="nav-link">section 5</a>
+            <a href="#introduction" class="nav-link">introduction</a>
+            <a href="#flex_parent" class="nav-link">defining a flex parent</a>
+            <a href="#flex_child" class="nav-link">defining a flex child</a>
+            <a href="#fabriq_buttons" class="nav-link">buttons with fabriq</a>
+            <a href="#fabriq_forms" class="nav-link">forms with fabriq</a>
+            <a href="#final_notes" class="nav-link">final notes</a>
             <p>
                 <a href="https://github.com/ivanvonchrist/fabriq/">fabriq on <i class="fab fa-github"></i></a>
             </p>
         </nav>
         <main id="main-doc">
-            <section id="section_id" class="main-section">
+            <section id="introduction" class="main-section">
                 <h1>introduction</h1>
-                <p>paragraph</p> <code>&lt;div&nbsp;id=&quot;parent&quot;&nbsp;class=&quot;p&quot;&gt;<br/>&lt;/div&gt;</code>
-                <ul>
-                    <li>list item</li>
-                    <li>list item</li>
-                    <li>list item</li>
-                </ul>
+                <p> Fabriq is a light-weight, Flexbox-driven boilerplate for simple, static landing pages. With fabriq, you make use of an array of pre-defined classes in order to set-up your page elements. An example of a page built using fabriq can be <a href="https://ivanvonchrist.github.io/fabriq/">viewed here</a>.</p>
             </section>
-            <section id="section_id" class="main-section">
-                <h1>section 2</h1>
-                <p>paragraph</p>
+            <hr>
+            <section id="flex_parent" class="main-section">
+                <h1>defining a flex parent</h1>
+                <p>To define an element as a flex parent, it's as simple as adding the class <code>p</code>, as follows:</p>
+                <code>&lt;div&nbsp;id=&quot;parent&quot;&nbsp;class=&quot;p&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;this&nbsp;is&nbsp;a&nbsp;flex&nbsp;parent--&gt;<br/>&lt;/div&gt;</code>
+                <p>To define how the flex parent justifies and aligns its content, add classes such as <code>jus-ctr</code> and <code>ali-ctr</code> to the element, for example</p>
+                <code>&lt;div&nbsp;id=&quot;parent&quot;&nbsp;class=&quot;p&nbsp;jus-ctr&nbsp;ali-ctr&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;this&nbsp;is&nbsp;a&nbsp;flex&nbsp;parent&nbsp;with&nbsp;content&nbsp;justified&nbsp;and&nbsp;aligned&nbsp;to&nbsp;center&nbsp;--&gt;<br/>&lt;/div&gt;</code>
+                <p>
+                    List and detail of parent classes included with fabriq:
+                    <ul>
+                        <li><code>p</code> defines a flex parent with <code>display: flex;</code>, <code>flex-direction: row;</code> and <code>flex-wrap: wrap;</code></li>
+                        <li><code>jus-ctr</code> will justify your contents with <code>justify-content: center;</code></li>
+                        <li><code>jus-end</code> will justify your contents with <code>justify-content: flex-end;</code></li>
+                        <li><code>ali-ctr</code> will align your contents with <code>align-items: center;</code></li>
+                    </ul>
+                </p>
             </section>
-            <section id="section_id" class="main-section">
-                <h1>section 3</h1>
-                <p>paragraph</p>
+            <hr>
+            <section id="flex_child" class="main-section">
+                <h1>defining a flex child</h1>
+                <p>Atrributes such as flex-grow, flex-shrink and flex-basis are defined by classes such as <code>g0</code>, <code>s0</code>, <code>f100</code>. You can easily add your own classes into the CSS to suit your needs. For example:
+                </p>
+                <code>&lt;div&nbsp;id=&quot;parent&quot;&nbsp;class=&quot;p&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=&quot;child&quot;&nbsp;class=&quot;g0&nbsp;s0&nbsp;f100&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;this&nbsp;is&nbsp;a&nbsp;flex&nbsp;child&nbsp;with&nbsp;flex-grow:&nbsp;0;&nbsp;flex-shrink:&nbsp;0;&nbsp;flex-basis:&nbsp;100;&nbsp;--&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>&lt;/div&gt;</code>
+                <p>Sometimes you may want a flex child to also act as a flex parent, which can be achieved simply by adding the <code>.p</code> class to the child element.</p>
+                <p>
+                    List and detail of child classes included with fabriq:
+                    <ul>
+                        <li><code>g0</code> sets <code>flex-grow: 0;</code> on a child</li>
+                        <li><code>g1</code> sets <code>flex-grow: 1;</code> on a child</li>
+                        <li><code>g2</code> sets <code>flex-grow: 2;</code> on a child</li>
+                        <li><code>s0</code> sets <code>flex-shrink: 0;</code> on a child</li>
+                        <li><code>s1</code> sets <code>flex-shrink: 1;</code> on a child</li>
+                        <li><code>f20</code> sets <code>flex-basis: 20%;</code> on a child</li>
+                        <li><code>f40</code> sets <code>flex-basis: 40%;</code> on a child</li>
+                        <li><code>f60</code> sets <code>flex-basis: 60%;</code> on a child</li>
+                        <li><code>f80</code> sets <code>flex-basis: 80%;</code> on a child</li>
+                        <li><code>f100</code> sets <code>flex-basis: 100%;</code> on a child</li>
+                        <li><code>f33</code> sets <code>flex-basis: 33.33%;</code> on a child</li>
+                        <li><code>f66</code> sets <code>flex-basis: 66.66%;</code> on a child</li>
+                    </ul>
+                </p>
             </section>
-            <section id="section_id" class="main-section">
-                <h1>section 4</h1>
-                <p>paragraph</p>
+            <hr>
+            <section id="fabriq_buttons" class="main-section">
+                <h1>buttons with fabriq</h1>
+                <p>Buttons come in two styles with fabriq. An alternative style can be defined using <code>.button-alt</code>. All types of buttons are included in the definitions.</p>
+                <p>For example:</p>
+                <code>&lt;div&nbsp;class=&quot;p&nbsp;jus-ctr&nbsp;ali-ctr&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;button&quot;&nbsp;value=&quot;Button&nbsp;Default&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;button-alt&quot;&nbsp;type=&quot;button&quot;&nbsp;value=&quot;Button&nbsp;Alt&quot;&gt;<br/>&lt;/div&gt;</code>
+                <div class="p jus-ctr ali-ctr">
+                    <input type="button" value="Button Default">
+                    <input class="button-alt" type="button" value="Button Alt">
+                </div>
             </section>
-            <section id="section_id" class="main-section">
-                <h1>section 5</h1>
-                <p>paragraph</p>
+            <hr>
+            <section id="fabriq_forms" class="main-section">
+                <h1>forms with fabriq</h1>
+                <p>For ease, forms come pre-styled with fabriq, all you need to do is change how they look!</p>
+                <p>The following code produces the example below:</p>
+                <code>&lt;form&nbsp;class=&quot;p&nbsp;jus-ctr&nbsp;ali-ctr&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;g0&nbsp;s0&nbsp;f80&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;email&quot;&gt;e-mail&lt;/label&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;email&quot;&nbsp;placeholder=&quot;your&nbsp;e-mail&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;query&quot;&gt;query&lt;/label&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;selected&nbsp;disabled&nbsp;hidden&gt;your&nbsp;choice&lt;/option&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;option-1&quot;&gt;vanilla&lt;/option&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;option-2&quot;&gt;chocolate&lt;/option&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;option-3&quot;&gt;strawberry&lt;/option&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;message&quot;&gt;message&lt;/label&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea&nbsp;placeholder=&quot;your&nbsp;message&quot;&gt;&lt;/textarea&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;p&nbsp;jus-ctr&nbsp;ali-ctr&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;submit&quot;&nbsp;value=&quot;submit&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;button-alt&quot;&nbsp;type=&quot;reset&quot;&nbsp;value=&quot;reset&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>&lt;/form&gt;</code>
+                <form class="p jus-ctr ali-ctr">
+                    <div class="g0 s0 f80">
+                        <label for="email">e-mail</label>
+                        <br>
+                        <input type="text" name="email" placeholder="your e-mail">
+                        <br>
+                        <label for="query">query</label>
+                        <br>
+                        <select>
+                            <option selected disabled hidden>your choice</option>
+                            <option value="option-1">vanilla</option>
+                            <option value="option-2">chocolate</option>
+                            <option value="option-3">strawberry</option>
+                        </select>
+                        <br>
+                        <label for="message">message</label>
+                        <br>
+                        <textarea placeholder="your message"></textarea>
+                        <br>
+                        <div class="p jus-ctr ali-ctr">
+                            <input type="submit" value="submit">
+                            <input class="button-alt" type="reset" value="reset">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <hr>
+            <section id="final_notes" class="main-section">
+                <h1>final notes</h1>
+                <p>Fabriq was developed by <a href="https://github.com/ivanvonchrist">Ivan von Christ</a>.  The font 'Montserrat' was created by <a href="https://ivanvonchrist.github.com/">Julieta Ulanovsky</a>. Fabriq is completely free to use under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+                </p>
             </section>
         </main>
     </div>
